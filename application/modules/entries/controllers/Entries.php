@@ -6,7 +6,7 @@
  * Time: 11:43
  */
 
-class Entries extends CI_Controller
+class Entries extends MX_Controller
 {
     private $data;
 
@@ -28,7 +28,7 @@ class Entries extends CI_Controller
 
         //render view
         $this->load->view('admin/header', $this->data);
-        $this->load->view('admin/entries/lists');
+        $this->load->view('entries/lists');
         $this->load->view('admin/footer');
     }
 
@@ -85,7 +85,7 @@ class Entries extends CI_Controller
 
         //render view
         $this->load->view('admin/header', $this->data);
-        $this->load->view('admin/entries/edit_temp');
+        $this->load->view('entries/edit_temp');
         $this->load->view('admin/footer');
     }
 }

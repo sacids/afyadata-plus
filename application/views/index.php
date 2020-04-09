@@ -18,8 +18,7 @@
 
                 <div class="header-elements d-none">
                     <a href="<?= site_url('auth/login') ?>" class="btn btn-labeled btn-labeled-right bg-primary">Login
-                        <b><i
-                                    class="icon-lock"></i></b></a>
+                        <b><i class="icon-lock"></i></b></a>
                 </div><!--./header-elements -->
             </div><!--./page-header-content -->
         </div><!-- /page header -->

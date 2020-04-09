@@ -9,7 +9,7 @@
             <div class="page-header-content header-elements-md-inline" style="margin-top: -25px;
             margin-bottom: -25px !important;">
                 <div class="page-title d-flex">
-                    <h4><i class="icon-home4 mr-2"></i> <span class="font-weight-semibold">PoE Entries</span></h4>
+                    <h4><i class="icon-home4 mr-2"></i> <span class="font-weight-semibold">Forms</span></h4>
                     <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
                 </div><!--./page-title -->
             </div><!--./page-header-content -->
@@ -21,42 +21,36 @@
             <!-- Basic datatable -->
             <div class="card">
                 <div class="card-header header-elements-inline">
-                    <h5 class="card-title">PoE Entries</h5>
-                </div>
+                    <h5 class="card-title">Forms</h5>
+                    <a class="btn btn-primary btn-sm" href="<?= site_url('forms/upload') ?>">
+                        <i class="icon-upload4"></i> Upload
+                    </a>
+                </div><!--./card-header -->
 
                 <table class="table table-bordered datatable-basic">
                     <thead>
                     <tr>
                         <th width="3%"></th>
-                        <th width="20%">Name</th>
-                        <th width="8%">Age</th>
-                        <th width="8%">Sex</th>
-                        <th width="15%">Passport No.</th>
-                        <th width="20%">Country</th>
-                        <th width="10%">Temp (&#8451;)</th>
-                        <th width="10%">Entry Date</th>
+                        <th width="40%">Name</th>
+                        <th width="30%">Form ID</th>
+                        <th width="10%">Version</th>
+                        <th width="10%">Creation Date</th>
                         <th width="5%"></th>
                     </tr>
                     </thead>
 
                     <tbody>
-                    <?php if (isset($entries) && $entries) {
+                    <?php if (isset($forms) && $forms) {
                         $serial = 1;
-                        foreach ($entries as $values) { ?>
+                        foreach ($forms as $values) { ?>
                             <tr>
                                 <td><?= $serial ?></td>
-                                <td>
-                                    <a href="<?= site_url('entries/edit_temp/' . $values->id) ?>"><?= $values->surname . ' ' . $values->other_names ?></a>
-                                </td>
-                                <td><?= $values->age ?></td>
-                                <td><?= $values->sex ?></td>
-                                <td><?= $values->passport_number ?></td>
-                                <td><?= $values->passport_country ?></td>
-                                <td><?= $values->temperature ?></td>
+                                <td><?= $values->name ?></td>
+                                <td><?= $values->form_id ?></td>
+                                <td><?= $values->version ?></td>
                                 <td><?= date('d-M-Y', strtotime($values->created_at)) ?></td>
                                 <td>
-                                    <a href="<?= site_url('entries/edit_temp/' . $values->id) ?>"><i
-                                            class="icon-folder mr-2"></i></a>
+                                    <a href="#"><i class="icon-pencil3 mr-2"></i></a>
                                 </td>
                             </tr>
                             <?php $serial++;

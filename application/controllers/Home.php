@@ -40,18 +40,17 @@ class Home extends CI_Controller
             }
             $data['created_at'] = date('Y-m-d H:i:s');
 
-//            echo "<pre>";
-//            print_r($data);
-//            exit();
+            echo "<pre>";
+            print_r($data);
 
             //insert data
-            $this->model->set_table('poe_entries');
-            if ($this->model->insert($data)) {
-                $this->session->set_flashdata('message', display_message('Your information registered'));
-            } else {
-                $this->session->set_flashdata('message', display_message('Failed to register information', 'danger'));
-            }
-            redirect('');
+//            $this->model->set_table('poe_entries');
+//            if ($this->model->insert($data)) {
+//                $this->session->set_flashdata('message', display_message('Your information registered'));
+//            } else {
+//                $this->session->set_flashdata('message', display_message('Failed to register information', 'danger'));
+//            }
+//            redirect('');
         }
 
         //populate data

@@ -64,7 +64,13 @@
             </li>
 
             <li class="nav-item">
-                <a href="<?= site_url('entries') ?>" class="navbar-nav-link text-white">
+                <a href="<?= site_url('forms/lists') ?>" class="navbar-nav-link text-white">
+                    Forms
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a href="<?= site_url('entries/lists') ?>" class="navbar-nav-link text-white">
                     PoE Entries
                 </a>
             </li>

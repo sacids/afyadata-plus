@@ -11,7 +11,8 @@
                 </div>
 
                 <div class="header-elements d-none">
-                    <a href="#" class="btn btn-labeled btn-labeled-right bg-primary">Button <b><i class="icon-menu7"></i></b></a>
+                    <a href="<?= site_url('auth/login') ?>" class="btn btn-labeled btn-labeled-right bg-secondary">Login
+                        <b><i class="icon-lock"></i></b></a>
                 </div>
             </div>
         </div>
