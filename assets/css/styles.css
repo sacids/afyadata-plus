@@ -1,0 +1,301 @@
+/*!
+ * Start Bootstrap - Creative Bootstrap Theme (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    font-size: 13px;
+    color: #333333;
+
+}
+
+a {
+    color: #2f4050;
+}
+
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Nunito', sans-serif;
+}
+
+p {
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.text-small {
+    font-size: 12px;
+}
+
+.text-medium {
+    font-size: 14px;
+}
+
+.text-faded {
+    color: rgba(255, 255, 255, .7);
+}
+
+.text-primary {
+    color: #2f4050 !important;
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.text-black {
+    color: #000000;
+}
+
+.hide {
+    display: none;
+}
+
+.page-title img {
+    width: 60px;
+    height: 100%;
+}
+
+.page-title h4 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+@media (max-width: 480px) {
+    .page-title img {
+        width: 60px;
+        height: 100%;
+    }
+
+    .page-title h4 {
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+/*===============================================
+Background colors
+===============================================*/
+.bg-primary {
+    background-color: #088c4a;
+}
+
+.bg-primary-2 {
+    background-color: #2f4050;
+}
+
+.bg-black {
+    color: #fff;
+    background-color: #000000;
+}
+
+.bg-dark {
+    color: #fff;
+    background-color: #222;
+}
+
+.bg-white {
+    background-color: #ffffff;
+}
+
+.bg-grey {
+    background-color: #eeeeee;
+}
+
+.bg-light-grey {
+    background-color: #fafafa;
+}
+
+.bg-graph {
+    background-color: #f5f5f5;
+}
+
+/*===============================================
+Tables
+===============================================*/
+table.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 10px 0 1em 1px;
+    width: 100%;
+}
+
+table.table th {
+    font-size: 13px;
+    font-weight: bold;
+    text-align: left;
+    color: #333;
+    padding: 8px !important;
+    background: #F1F1F1;
+    border-bottom: 1px solid #E3E3E3;
+}
+
+table.table td {
+    font-size: 13px;
+    vertical-align: top;
+    background: #FFF;
+    border-bottom: 1px solid #E3E3E3;
+    padding: 10px !important;
+    color: #333;
+}
+
+table.table td a {
+    text-decoration: none !important;
+    font-weight: normal !important;
+}
+
+table.table th a {
+    text-align: right;
+    text-decoration: none !important;
+    font-weight: normal !important;
+}
+
+/*.table tr:nth-child(odd) td {*/
+/*background-color: #FAFAFA;*/
+/*}*/
+
+/*.table tr:nth-child(even) td {*/
+/*background-color: #FFF;*/
+/*}*/
+
+/*===============================================
+Buttons
+===============================================*/
+.btn {
+    border-radius: 0 !important;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.btn-primary {
+    color: #ffffff;
+    background-color: #2f4050;
+    border-color: #2f4050;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    color: #ffffff;
+    background-color: #2f4050;
+    border-color: #2f4050;
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+    background-image: none;
+}
+
+.btn-primary.disabled,
+.btn-primary[disabled],
+fieldset[disabled] .btn-primary,
+.btn-primary.disabled:hover,
+.btn-primary[disabled]:hover,
+fieldset[disabled] .btn-primary:hover,
+.btn-primary.disabled:focus,
+.btn-primary[disabled]:focus,
+fieldset[disabled] .btn-primary:focus,
+.btn-primary.disabled:active,
+.btn-primary[disabled]:active,
+fieldset[disabled] .btn-primary:active,
+.btn-primary.disabled.active,
+.btn-primary[disabled].active,
+fieldset[disabled] .btn-primary.active {
+    background-color: #2f4050;
+    border-color: #2f4050;
+}
+
+.btn-secondary {
+    color: #ffffff;
+    background-color: #1565c0;
+    border-color: #1565c0;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary.active,
+.open .dropdown-toggle.btn-secondary {
+    color: #ffffff;
+    background-color: #1565c0;
+    border-color: #1565c0;
+}
+
+.btn-secondary:active,
+.btn-secondary.active,
+.open .dropdown-toggle.btn-secondary {
+    background-image: none;
+}
+
+.btn-secondary.disabled,
+.btn-secondary[disabled],
+fieldset[disabled] .btn-secondary,
+.btn-secondary.disabled:hover,
+.btn-secondary[disabled]:hover,
+fieldset[disabled] .btn-secondary:hover,
+.btn-secondary.disabled:focus,
+.btn-secondary[disabled]:focus,
+fieldset[disabled] .btn-secondary:focus,
+.btn-secondary.disabled:active,
+.btn-secondary[disabled]:active,
+fieldset[disabled] .btn-secondary:active,
+.btn-secondary.disabled.active,
+.btn-secondary[disabled].active,
+fieldset[disabled] .btn-secondary.active {
+    background-color: #1565c0;
+    border-color: #1565c0;
+}
+
+.btn-tertiary {
+    color: #3F3F3F;
+    font-weight: 600;
+    background-color: #f1f1f1;
+    border-color: #f1f1f1;
+}
+
+.btn-tertiary:hover,
+.btn-tertiary:focus,
+.btn-tertiary:active,
+.btn-tertiary.active,
+.open .dropdown-toggle.btn-tertiary {
+    color: #3F3F3F;
+    background-color: #f1f1f1;
+    border-color: #f1f1f1;
+}
+
+.btn-tertiary:active,
+.btn-tertiary.active,
+.open .dropdown-toggle.btn-tertiary {
+    background-image: none;
+}
+
+/*===============================================
+Icons
+===============================================*/
+i.fa-coat-of-arm {
+    content: "";
+    background-image: url("../img/CoatofArms_Lg.png");
+    width: 36px;
+    height: 36px;
+    display: inline-block;
+    background-size: cover;
+}
+
