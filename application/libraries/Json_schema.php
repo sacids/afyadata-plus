@@ -95,8 +95,8 @@ class Json_schema
                 echo "<div class='form-group'>";
                 echo "<label>$label</label>";
                 $select_option = [];
-                foreach ($element['options'] as $k => $v) {
-                    $select_option[$k] = $v;
+                foreach ($element['options'] as $key => $value) {
+                    $select_option[$value['key']] = $value['val'];
                 }
                 $select_option = ['' => 'Select'] + $select_option;
                 echo form_dropdown($name . '[]', $select_option, set_value($name . '[]'), ['class' => 'form-control', 'id' => $name]);

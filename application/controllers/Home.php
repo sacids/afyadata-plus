@@ -231,11 +231,16 @@ class Home extends CI_Controller
     //render form
     function rendering()
     {
-        $this->data['title'] = 'COVID-19';
+        $this->data['title'] = 'Form Rendering';
 
-        //form attributes
-        $json_schema = $this->load_json_schema();
-        $this->data['form'] = $json_schema;
+        //attachment
+        $attachment_path = './assets/uploads/forms/definition/Traveller_Form.json'; //uploaded file
+
+        $data = file_get_contents($attachment_path);
+        $form = json_decode($data, true);
+
+        $this->data['form'] = $form;
+
 
         //if post data
 //        if (isset($_POST) && $_POST) {

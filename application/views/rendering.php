@@ -6,7 +6,8 @@
         <div class="page-header page-header-light">
             <div class="page-header-content header-elements-md-inline">
                 <div class="page-title d-flex">
-                    <h4><i class="icon-add mr-2"></i> <span class="font-weight-semibold">Point of Entry (PoE)</span> - Registration</h4>
+                    <h4><i class="icon-add mr-2"></i> <span class="font-weight-semibold">Point of Entry (PoE)</span> -
+                        Registration</h4>
                     <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
                 </div>
 
@@ -15,8 +16,7 @@
                         <b><i class="icon-lock"></i></b></a>
                 </div>
             </div>
-        </div>
-        <!-- /page header -->
+        </div><!-- /page header -->
 
         <!-- Content area -->
         <div class="content">
@@ -49,15 +49,14 @@
                             echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '" id="' . $form['meta']['form_id'] . '">';
                             $this->json_schema->iterate_form($form['data']);
 
-                            echo '
-	        <div class="row" style="overflow:auto;">
-		        <div class="col-lg-12">
-		            <div class="form-group">
-		                <button type="button" class="btn btn-primary btn-xs" id="prevBtn" onclick="nextPrev(\'' . $form['meta']['form_id'] . '\',-1)">Previous</button>
-		                <button type="button" class="btn btn-warning btn-xs" id="nextBtn" onclick="nextPrev(\'' . $form['meta']['form_id'] . '\',1)">Next</button>
-		            </div>
-		        </div>
-		    </div>';
+                            echo '<div class="row" style="overflow:auto;">
+		                            <div class="col-lg-12">
+		                                <div class="form-group">
+		                                    <button type="button" class="btn btn-primary btn-xs" id="prevBtn" onclick="nextPrev(\'' . $form['meta']['form_id'] . '\',-1)">Previous</button>
+		                                    <button type="button" class="btn btn-warning btn-xs" id="nextBtn" onclick="nextPrev(\'' . $form['meta']['form_id'] . '\',1)">Next</button>
+		                                </div>
+		                            </div>
+		                          </div>';
                             echo '</form>'; ?>
                         </div><!--./col-lg-12-->
                     </div><!--./row -->
