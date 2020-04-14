@@ -25,7 +25,7 @@ class Db_exp
 
         $required = '';
         foreach ($element as $key => $value) {
-            if (strtoupper($value['type']) == 'GROUP') {
+            if (strtoupper($value['type']) == 'PAGE') {
                 foreach ($value['child'] as $v) {
                     $col_name = $v['data_name'];
                     $type = strtoupper($v['type']);

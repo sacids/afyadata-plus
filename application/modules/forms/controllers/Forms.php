@@ -41,17 +41,31 @@ class Forms extends MX_Controller
         $this->form_validation->set_rules('attachment', 'JSON File', 'callback_upload_json_file|trim');
 
         if ($this->form_validation->run($this) === TRUE) {
-            $form_name = $this->input->post('name');
-            $description = $this->input->post('description');
-
+            //attachment
             $attachment_path = './assets/uploads/forms/definition/' . $_POST['attachment']; //uploaded file
 
             $data = file_get_contents($attachment_path);
-            $data = json_decode($data, true);
+            $form = json_decode($data, true);
 
-            echo "<pre>";
-            print_r($data);
-            exit();
+            //insert data
+            $data = [
+                'name' => $this->input->post('name'),
+                'description' => $this->input->post('description'),
+                'version' => $form['meta']['version'],
+                'form_id' => $form['meta']['form_id'],
+                'attachment' => $_POST['attachment'],
+                'created_by' => get_current_user_id(),
+                'created_at' => date('Y-m-d H:i:s')
+            ];
+
+            if ($id = $this->form_model->insert($data)) {
+                //create a table here
+                $create_statement = $this->db_exp->create_table_sql_query($form['meta']['form_id'], $form['data']);
+                $this->form_model->create_table($create_statement);
+
+                $this->session->set_flashdata('message', display_message('Form uploaded'));
+                redirect('forms/upload', 'refresh');
+            }
         }
 
         //populate data
@@ -98,29 +112,6 @@ class Forms extends MX_Controller
         $this->load->view('forms/builder');
     }
 
-
-    //todo: call this once =>create
-    function create()
-    {
-        $post_data = $this->load_json_schema();
-
-        if (isset($post_data['meta']) && $post_data['meta']) {
-            $data = [
-                'name' => $post_data['meta']['name'],
-                'form_id' => $post_data['meta']['form_id'],
-                'description' => $post_data['meta']['description'],
-                'version' => $post_data['meta']['version'],
-                'created_by' => 1,
-                'created_at' => date('Y-m-d H:i:s'),
-            ];
-
-            if ($id = $this->form_model->insert($data)) {
-                //create a table here
-                $create_statement = $this->db_exp->create_table_sql_query($post_data['meta']['form_id'], $post_data['data']);
-                $this->form_model->create_table($create_statement);
-            }
-        }
-    }
 
     /*=================================================
       Callback Functions
