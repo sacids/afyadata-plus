@@ -22,7 +22,7 @@ class Auth extends CI_Controller
         if (!$this->ion_auth->logged_in()) {
             redirect('auth/login', 'refresh');
         } else {
-            redirect('admin/dashboard', 'refresh');
+            redirect('dashboard', 'refresh');
         }
     }
 
