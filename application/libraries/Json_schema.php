@@ -86,6 +86,16 @@ class Json_schema
                 echo "</div>"; //col-md-12
                 echo "</div>"; //row
                 break;
+            case 'BARCODE':
+                echo "<div class='row'>";
+                echo "<div class='col-md-12'>";
+                echo "<div class='form-group'>";
+                echo "<input type='text' name='$name'  id='$id' class='form-control' placeholder='$hint' />";
+                echo "<button type='button' data-scan_id='$id' class='form-control bscan icon-barcode'></button>";
+                echo "</div>"; //form-group
+                echo "</div>"; //col-md-12
+                echo "</div>"; //row
+                break;
             case 'SELECT':
                 echo "<div class='row'>";
                 echo "<div class='col-md-12'>";

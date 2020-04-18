@@ -88,9 +88,9 @@
                     "id": "6"
                 },
                 "7": {
-                    "type": "text",
-                    "data_name": "flight_no",
-                    "label": "Vessel/Flight/Vehicle Name/No",
+                    "type": "barcode",
+                    "data_name": "barcode",
+                    "label": "Barcode",
                     "hint": "",
                     "required": "0",
                     "relevance": "",

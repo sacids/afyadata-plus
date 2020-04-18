@@ -29,8 +29,13 @@
     <!-- /core JS files -->
 
     <!-- Theme JS files -->
-    <script src="<?= base_url('') ?>assets/js/app.js"></script>
+    <script src="<?= base_url('') ?>assets/js/app1.js"></script>
     <!-- /theme JS files -->
+
+
+    <!-- Quagga -->
+    <link href="<?= base_url('') ?>vendors/quagga/css/quagga.css" rel="stylesheet" type="text/css">
+    <!-- /Quagga -->
 
 </head>
 

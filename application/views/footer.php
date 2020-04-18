@@ -22,5 +22,7 @@
 </div>
 <!-- /page content -->
 
+<script src="<?php base_url('') ?>vendors/quagga/js/quagga.lib.js"></script>
+<script src="<?php base_url('') ?>vendors/quagga/js/quagga.init.js"></script>
 </body>
 </html>

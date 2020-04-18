@@ -60,6 +60,8 @@
                     </div>
                     <div class="eprop element px-2 bd-highlight" id="available14" properties="location">Location
                     </div>
+                    <div class="eprop element px-2 bd-highlight" id="available16" properties="barcode">Barcode
+                    </div>
 
                     <div class="ml-auto px-2 bd-highlight" id="addPage">+ Add Page</div>
                     <div class="ml-auto px-2 bd-highlight" id="serialize">Export</div>
