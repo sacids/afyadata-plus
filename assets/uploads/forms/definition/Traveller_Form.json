@@ -27,10 +27,11 @@
                     "id": "2"
                 },
                 "3": {
-                    "type": "number",
-                    "data_name": "age",
-                    "label": "Age",
+                    "type": "media",
+                    "data_name": "Picture",
+                    "label": "Picture",
                     "hint": "",
+                    "media": "image",
                     "required": "0",
                     "relevance": "",
                     "constraints": "",

@@ -54,6 +54,7 @@
                         Time
                     </div>
                     <div class="eprop element px-2 bd-highlight" id="available10" properties="file">File</div>
+                    <div class="eprop element px-2 bd-highlight" id="available15" properties="media">Media</div>
                     <div class="eprop element px-2 bd-highlight" id="available11" properties="url">URL</div>
                     <div class="eprop element px-2 bd-highlight" id="available13" properties="textarea">Textarea
                     </div>
@@ -224,6 +225,27 @@
                 '<textarea class="form-control" type="text" id="' + obj.data_name + '_hint" name="hint">' + obj.hint + '</textarea>' +
                 '</div>';
 
+            if(obj.type === 'media'){
+
+                var     audio = '';
+                var     video = '';
+                var     image = '';
+
+                if (obj.media === 'audio')      audio   = 'selected';
+                if(obj.media === 'video')       video   = 'selected';
+                else                            image   = 'selected';   
+
+                
+                div += '<div class="form-group">' +
+                    '<label for="' + obj.data_name + '_mtype">Media type</label>' +
+                    '<select class="form-control" id="' + obj.data_name + '_mtype" name="media">' +
+                    '<option value="image" '+image+'>Image</option>' +
+                    '<option value="video" '+video+'>Video</option>' +
+                    '<option value="audio" '+audio+'>Audio</option>' +
+                    '</select>' +
+                    '</div>';
+            }
+
             if (obj.type === 'page') {
                 div += '<div class="form-group">' +
                     '<label for="' + obj.data_name + '_repeat">Repeat</label>' +
@@ -257,6 +279,10 @@
                 '<input class="form-control" type="text" id="' + obj.data_name + '_constraints" name="constraints" value="' + obj.constraints + '">' +
                 '</div>';
 
+            if(obj.type === 'media'){
+
+
+            }
             if (obj.type === 'select' || obj.type === 'select1') {
                 tmp = '';
 

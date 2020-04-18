@@ -49,6 +49,17 @@ class Json_schema
                 echo "</div>"; //row
                 echo "</div>"; //tab
                 break;
+            case 'MEDIA':
+                echo "<div class='row'>";
+                echo "<div class='col-md-12'>";
+                echo "<div class='form-group'>";
+                echo "<label>$label</label>";
+                echo "<img id='media_$id' class='img-responsive' width='100%' src='' />";
+                echo "<input type='file' name='$name'  id='$id' accept='$media/*' class='capture-$media form-control' placeholder='$hint' capture/>";
+                echo "</div>"; //form-group
+                echo "</div>"; //col-md-12
+                echo "</div>"; //row
+                break;
             case 'NUMBER':
             case 'TEXT':
             case 'DATE':

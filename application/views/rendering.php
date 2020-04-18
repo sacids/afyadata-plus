@@ -149,4 +149,20 @@
                     alert("Sorry, your browser does not support HTML5 geolocation.");
                 }
             }
+
+            function readURL(input, id) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader(); 
+                    reader.onload = function(e) {
+                        $('#'+id).attr('src', e.target.result);
+                    }
+                    
+                    reader.readAsDataURL(input.files[0]); // convert to base64 string
+                }
+            }
+
+            $(".capture-image").change(function() {
+                var id = $(this).attr('id');
+                readURL(this,'media_'+id);
+            });
         </script>
