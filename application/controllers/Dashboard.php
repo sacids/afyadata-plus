@@ -18,14 +18,8 @@ class Dashboard extends CI_Controller
 
     function index()
     {
-        $this->data['title'] = '';
+        $this->data['title'] = 'System Overview';
 
-        //table fields
-        $this->data['fields'] = $this->form_model->find_table_columns('tb_form_12');
-
-        //table data
-        $this->model->set_table('tb_form_12');
-        $this->data['entries'] = $this->model->order_by('submitted_at', 'DESC')->get_all();
 
         //render view
         $this->load->view('admin/header', $this->data);

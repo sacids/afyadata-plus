@@ -139,5 +139,6 @@ $autoload['model'] = array(
     'group_model',
     'users_group_model',
     'symptom_model',
-    'forms/form_model'
+    'forms/form_model',
+    'entries/poe_entry_model'
 );

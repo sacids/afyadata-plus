@@ -61,6 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @property Users_group_model $users_group_model
  * @property Symptom_model $symptom_model
  * @property Form_model $form_model
+ * @property Poe_entry_model $poe_entry_model
  * @link        https://codeigniter.com/user_guide/general/controllers.html
  */
 class CI_Controller

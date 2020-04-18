@@ -28,14 +28,14 @@
                     <thead>
                     <tr>
                         <th width="3%"></th>
-                        <th width="20%">Name</th>
-                        <th width="8%">Age</th>
+                        <th width="18%">Name</th>
+                        <th width="6%">Age</th>
                         <th width="8%">Sex</th>
-                        <th width="15%">Passport No.</th>
-                        <th width="20%">Country</th>
-                        <th width="10%">Temp (&#8451;)</th>
-                        <th width="10%">Entry Date</th>
-                        <th width="5%"></th>
+                        <th width="12%">Passport No.</th>
+                        <th width="14%">Nationality</th>
+                        <th width="20%">Vessel/Flight/Vehicle Name/No</th>
+                        <th width="10%">Arrival Date</th>
+                        <th width="12%">Temp (&#8451;)</th>
                     </tr>
                     </thead>
 
@@ -46,17 +46,33 @@
                             <tr>
                                 <td><?= $serial ?></td>
                                 <td>
-                                    <a href="<?= site_url('entries/edit_temp/' . $values->id) ?>"><?= $values->surname . ' ' . $values->other_names ?></a>
+                                    <a href="<?= site_url('entries/edit_temp/' . $values->id) ?>"><?= $values->name ?></a>
                                 </td>
                                 <td><?= $values->age ?></td>
                                 <td><?= $values->sex ?></td>
                                 <td><?= $values->passport_number ?></td>
-                                <td><?= $values->passport_country ?></td>
-                                <td><?= $values->temperature ?></td>
-                                <td><?= date('d-M-Y', strtotime($values->created_at)) ?></td>
-                                <td>
-                                    <a href="<?= site_url('entries/edit_temp/' . $values->id) ?>"><i
-                                                class="icon-folder mr-2"></i></a>
+                                <td><?= $values->nationality ?></td>
+                                <td><?= $values->flight ?></td>
+                                <td><?= date('d M, Y', strtotime($values->created_at)) ?></td>
+                                <td><?php
+                                    if (!empty($values->temperature)) {
+                                        echo $values->temperature;
+                                    } else { ?>
+                                        <form id="formElem" method="post">
+                                            <input type="hidden" name="base_url" value="<?= base_url() ?>">
+                                            <input type="hidden" name="entry_id" value="<?= $values->id ?>">
+
+                                            <div class="input-group">
+                                                <input type="number" name="temp" id="temp" class="form-control"/>
+                                                <span class="input-group-btn">
+                                                    <button type="submit" name="search" class="btn btn-primary btn-sm">
+                                                    <i class="icon-arrow-right5"></i></button>
+                                                </span>
+                                            </div><!--./form-group -->
+
+
+                                        </form>
+                                    <?php } ?>
                                 </td>
                             </tr>
                             <?php $serial++;
@@ -66,3 +82,31 @@
                 </table>
             </div><!-- /basic datatable-->
         </div><!-- /content area-->
+
+        <script type="text/javascript">
+            //on form submit
+            let form = document.getElementById('formElem');
+            form.onsubmit = function () {
+                let formData = new FormData(form);
+
+                //entries
+                let base_url = formData.get("base_url");
+                let entry_id = formData.get("entry_id");
+                let temp = formData.get("temp");
+
+                //append formData
+                formData.append('entry_id', entry_id);
+                formData.append('temp', temp);
+
+                let xhr = new XMLHttpRequest();
+                // Add any event handlers here...
+                xhr.open('POST', base_url + '/entries/record_temp', true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        let response = xhr.response;
+                        console("response => " + response);
+                    }
+                };
+                xhr.send(formData);
+            }
+        </script>
